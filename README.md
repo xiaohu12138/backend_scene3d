@@ -69,6 +69,12 @@ python -m uvicorn backend_scene3d.gateway:create_app --factory --host 127.0.0.1 
 
 Windows SSH密码使用当前用户DPAPI加密，位于被Git忽略的 `.local/ssh-password.xml`；服务器主机密钥固定在 `.local/known_hosts`。可用 `scripts/configure-ssh.ps1` 保存本机凭据。Linux可使用独立隧道或反向代理接入，不依赖Windows代码。
 
+## 显示资源就绪检查
+
+`GET /api/health` 在基础显示资源齐全时返回 HTTP 200 和 `data_ready: true`；未齐全时返回 HTTP 503、`data_ready: false`、逐项 `checks` 和缺失项 `missing`。检查包含 WRF 清单与其引用的风场分块、地形清单、WRF 地形高度、Cesium 主脚本和样式、默认场景索引、结果、几何及逐帧文件。
+
+健康检查不会生成默认场景、提交计算或修改数据，也不遍历全部地形瓦片验证其内容。缺少默认场景时需按安装步骤执行准备命令；文件不完整时应补齐部署资源，不能将端口已监听视为可显示。
+
 ## 接口
 
 | 接口 | 用途 |

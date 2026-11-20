@@ -6,12 +6,13 @@ import time
 import re
 import jwt
 from fastapi import Depends, FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, Response, JSONResponse
 from fastapi.middleware.gzip import GZipMiddleware
 import numpy as np
 from .config import Settings
 from .datasets import Dataset
 from .jobs import Jobs
+from .readiness import display_readiness
 from .schemas import Parameters, Submission
 
 def create_app(settings=None):
@@ -50,7 +51,12 @@ def create_app(settings=None):
 
     @app.get('/api/health')
     def health():
-        return {'service':'backend_scene3d','status':'online','data_ready':(settings.data/'cesium_data/wrf3d/manifest.json').is_file()}
+        checks = display_readiness(settings)
+        ready = all(checks.values())
+        body = {'service': 'backend_scene3d', 'status': 'online' if ready else 'not_ready',
+                'data_ready': ready, 'checks': checks,
+                'missing': [name for name, available in checks.items() if not available]}
+        return JSONResponse(body, status_code=200 if ready else 503)
 
     @app.get('/api/scene3d/datasets')
     def datasets(user=Depends(identity)):
