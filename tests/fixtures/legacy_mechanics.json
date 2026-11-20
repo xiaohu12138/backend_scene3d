@@ -1,0 +1,194 @@
+{
+  "source_sha256": "e2492c411ca2a299d4180305f9e4cbc921f1ce3592cd47e4172b146edbcff71e",
+  "cases": [
+    {
+      "length": 360,
+      "ratio": 0.15,
+      "temperature": -20,
+      "tension": 110149.375,
+      "sag": 1.9434905207133493
+    },
+    {
+      "length": 360,
+      "ratio": 0.15,
+      "temperature": 20,
+      "tension": 110149.375,
+      "sag": 1.9434905207133493
+    },
+    {
+      "length": 360,
+      "ratio": 0.15,
+      "temperature": 80,
+      "tension": 85794.91829146066,
+      "sag": 2.495185850608907
+    },
+    {
+      "length": 360,
+      "ratio": 0.45,
+      "temperature": -20,
+      "tension": 76883.35303774459,
+      "sag": 2.7844033554299306
+    },
+    {
+      "length": 360,
+      "ratio": 0.45,
+      "temperature": 20,
+      "tension": 46651.49999999997,
+      "sag": 4.588797062795411
+    },
+    {
+      "length": 360,
+      "ratio": 0.45,
+      "temperature": 80,
+      "tension": 37355.72254907038,
+      "sag": 5.730695367859438
+    },
+    {
+      "length": 360,
+      "ratio": 0.5,
+      "temperature": -20,
+      "tension": 80142.79588870384,
+      "sag": 2.671160443070764
+    },
+    {
+      "length": 360,
+      "ratio": 0.5,
+      "temperature": 20,
+      "tension": 51835,
+      "sag": 4.129917356515867
+    },
+    {
+      "length": 360,
+      "ratio": 0.5,
+      "temperature": 80,
+      "tension": 37355.72254907038,
+      "sag": 5.730695367859438
+    },
+    {
+      "length": 405,
+      "ratio": 0.15,
+      "temperature": -20,
+      "tension": 110149.375,
+      "sag": 2.4597301902778326
+    },
+    {
+      "length": 405,
+      "ratio": 0.15,
+      "temperature": 20,
+      "tension": 110149.375,
+      "sag": 2.4597301902778326
+    },
+    {
+      "length": 405,
+      "ratio": 0.15,
+      "temperature": 80,
+      "tension": 110149.375,
+      "sag": 2.4597301902778326
+    },
+    {
+      "length": 405,
+      "ratio": 0.45,
+      "temperature": -20,
+      "tension": 79217.20109113335,
+      "sag": 3.420188284815076
+    },
+    {
+      "length": 405,
+      "ratio": 0.45,
+      "temperature": 20,
+      "tension": 46651.499999999985,
+      "sag": 5.80769628260044
+    },
+    {
+      "length": 405,
+      "ratio": 0.45,
+      "temperature": 80,
+      "tension": 40407.20609618964,
+      "sag": 6.705183785356629
+    },
+    {
+      "length": 405,
+      "ratio": 0.5,
+      "temperature": -20,
+      "tension": 81854.08977865966,
+      "sag": 3.3100086246194023
+    },
+    {
+      "length": 405,
+      "ratio": 0.5,
+      "temperature": 20,
+      "tension": 51834.999999999985,
+      "sag": 5.226926654340396
+    },
+    {
+      "length": 405,
+      "ratio": 0.5,
+      "temperature": 80,
+      "tension": 40407.20609618964,
+      "sag": 6.705183785356629
+    },
+    {
+      "length": 1420,
+      "ratio": 0.15,
+      "temperature": -20,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.15,
+      "temperature": 20,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.15,
+      "temperature": 80,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.45,
+      "temperature": -20,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.45,
+      "temperature": 20,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.45,
+      "temperature": 80,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.5,
+      "temperature": -20,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.5,
+      "temperature": 20,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    },
+    {
+      "length": 1420,
+      "ratio": 0.5,
+      "temperature": 80,
+      "tension": 110149.375,
+      "sag": 30.238073194185162
+    }
+  ]
+}

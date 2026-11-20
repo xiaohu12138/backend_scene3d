@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backend-scene3d"
+version = "0.1.0"
+description = "Independent server-side terrain, wind and transmission-line analysis service"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "httpx>=0.27,<1", "PyJWT>=2.10,<3", "numpy>=1.24,<3", "netCDF4>=1.6,<2", "python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+client = ["paramiko>=3,<6"]
+preprocess = ["scipy>=1.10,<2", "scikit-image>=0.21,<1"]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[tool.setuptools.packages.find]
+include = ["backend_scene3d*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
