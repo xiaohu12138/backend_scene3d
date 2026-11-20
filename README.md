@@ -1,3 +1,30 @@
+<!-- scene3d-current-start -->
+## 三维场景业务与平台关系
+
+2026-11-20：本仓库已独立发布到 [xiaohu12138/backend_scene3d](https://github.com/xiaohu12138/backend_scene3d)，为私有仓库。协作者需要仓库访问权限才能克隆。
+
+三维场景在智慧气象中属于一个业务子 Agent，整体链路为：主 Agent 调用三维场景子 Agent，子 Agent 通过本机网关提交服务器任务，Vue 页面展示相同任务的结果。本仓库承担后端计算服务职责，不导入其他同级项目的 Python 代码。
+
+| 配套组件 | 仓库或路径 | 配置 |
+|---|---|---|
+| 三维业务子 Agent | [weather_agentscope](https://github.com/dying311/weather_agentscope) 的 `agents/scene3d` | `WEATHER_AGENTSCOPE_SCENE3D_BASE` 指向本机网关 |
+| Vue 三维页面 | [webpage_sys](https://github.com/Leon-Developer-Java/webpage_sys) 的 `/scene3d` | `VITE_SCENE3D_BASE` 指向本机网关 |
+| 服务器 API | 本仓库 `backend_scene3d.api` | 默认监听服务器 `127.0.0.1:8013` |
+| 本机网关与隧道 | 本仓库 `gateway` 和 `tunnel` | 本机 8013 网关，经本机 18013 隧道访问服务器 8013 |
+
+### Windows 客户端准备
+
+使用项目的 Python 3.11 以上环境，在本仓库运行 `python -m pip install -e ".[client]"` 安装网关和 SSH 客户端依赖。复制 `.env.example` 为 `.env`，配置登录服务、服务器地址和路径；内部服务密钥必须与服务器一致。使用 `scripts/configure-ssh.ps1` 保存当前用户的加密 SSH 密码，并单独核对、配置 `.local/known_hosts` 中的服务器主机密钥。
+
+### 一键启动脚本
+
+平台启动文件已纳入 [deployment/windows](deployment/windows/README.md)。将其中的 `.bat`、`.ps1` 和 `STARTUP.md` 复制到所有业务仓库的共同父目录，检查本机解释器、Redis 和服务依赖后，双击 `start-all.bat`。不能直接在本仓库的部署子目录运行这些脚本。
+
+`stop-managed-services.bat` 只停止受管的本机服务及守护进程。服务器进程需使用 `bash scripts/stop-server.sh` 单独停止；重新启动本机隧道会再次拉起已配置的远端计算服务。
+
+服务器气象数据、Cesium 运行资源、实际 `.env`、密钥、任务结果和虚拟环境不随代码发布，需要按下文单独准备。当前服务处理已有南京数据，未实现通用 DEM 在线下载。本次后端 10 项测试通过；没有在上传时执行新的远端计算。
+<!-- scene3d-current-end -->
+
 # backend_scene3d
 
 独立的三维风场与输电线路计算服务。Python 代码不导入任何同级项目，计算进程部署在数据服务器；Vue 页面与 AgentScope 通过 HTTP 对接同一任务。
